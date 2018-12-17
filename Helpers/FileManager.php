@@ -130,7 +130,7 @@ class FileManager
         $fileSystem = new Filesystem();
         $exist = $fileSystem->exists($dir);
         if (false === $exist) {
-            mkdir($dir, 0777, true);
+            mkdir($dir, 0755, true);
             $exist = $fileSystem->exists($dir);
             if (false === $exist) {
                 throw new HttpException(Response::HTTP_INTERNAL_SERVER_ERROR, 'Directory does not exist.Could not create');
